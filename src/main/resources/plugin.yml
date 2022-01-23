@@ -13,10 +13,10 @@ permissions:
           - hiderplayers.cmd.reload
       hiderplayers.bypass:
         children:
-          - hiderplayers.bypass.vanish
+          - hiderplayers.bypass.vanish # Unused permission.
       hiderplayers.menu:
         children:
-          - hiderplayers.menu.open
+          - hiderplayers.menu.open 
           - hiderplayers.menu.vanish
           - hiderplayers.menu.hider
 commands:
