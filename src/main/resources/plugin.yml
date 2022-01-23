@@ -1,0 +1,27 @@
+name: HiderPlayers
+version: '${project.version}'
+main: org.alqj.dev.hider.HiderPlugin
+api-version: 1.13
+authors: [ iAlqjDV ]
+description: Hide the players for more performance for your PC.
+permissions:
+  hiderplayers:
+    children:
+      hiderplayers.cmd:
+        children:
+          - hiderplayers.cmd.list
+          - hiderplayers.cmd.reload
+      hiderplayers.bypass:
+        children:
+          - hiderplayers.bypass.vanish
+      hiderplayers.menu:
+        children:
+          - hiderplayers.menu.open
+          - hiderplayers.menu.vanish
+          - hiderplayers.menu.hider
+commands:
+  tools:
+    description: Open the menu of tools and utilities.
+  hiderplayers:
+    aliases: [hp]
+    description: Main Plugin Command.

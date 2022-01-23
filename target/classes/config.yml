@@ -1,0 +1,129 @@
+# HiderPlugin 1.0.1 - Thanks for using! Copyright © 2021.
+#
+# prefix: This is the format of prefix.
+# prefix_identifier: This is the identifier of prefix, example: [PREFIX] This is a example!
+# cooldown_time: This is the time for the cooldown.
+# sounds - {
+#
+#    reproduce: Reproduce the sounds?
+#    permission: Permission Sound.
+#    cooldown: Cooldown Sound.
+#    hide_show: Hide/Show Sound.
+#    vanish: Vanish Sound.
+#    volume: Count of volume for the other sounds.
+#    pitch: Count of pitch for this.
+#
+# titles - {
+#
+#    send: Define if send the titles to user or not.
+#    in: Time in coming for the titles.
+#    show: Time showing for the titles.
+#    out: Time output for the titles.
+#
+# menu - {
+#
+#    title: This is the title of Inventory/Menu.
+#    size: This is the size in slots of Menu.
+#    items - {
+#
+#       'item' - {
+#          material: Material for the item in the inventory.
+#          slot: Slot of item in the inventory.
+#          name: Name for the item, can use color codes here.
+#          lore: Description of the item.
+#
+# placeholders - {
+#
+#    %player% - Return player name.
+#    %time% - Return cooldown time.
+#    %ms% - Return reload time.
+prefix: "&6HiderPlayers &8»" # Prefix for messages.
+prefix_identifier: "[PREFIX]" # Identifier for the prefix.
+cooldown_time: 5 # Max time?
+sounds: # Sounds options.
+  reproduce: true # Sounds audible or not.
+  permission: ENTITY_ITEM_BREAK # Sound ID permission event.
+  cooldown: BLOCK_NOTE_BLOCK_PLING # Sound ID cooldown event.
+  hide_show: UI_BUTTON_CLICK # Sound ID for the hide/show event.
+  vanish: ENTITY_ENDER_DRAGON_FLAP # Sound ID for the vanish event.
+  open_gui: BLOCK_CHEST_OPEN # Sound ID for the open menu event.
+  volume: 1.0 # Max volume?
+  pitch: 1.0 # Max pitch?
+titles: # Titles options.
+  send: true # Send to user?
+  in: 20 # In coming title time.
+  show: 40 # Showing title time.
+  out: 20 # Output title time.
+menu: # Menu options.
+  title: "&8» &e&lTOOLS MENU" # Inventory Title.
+  size: 27 # Inventory Size.
+  items: # Items options.
+    hider_slot: 11
+    vanish_slot: 15
+    description:
+      material: BOOK # Material of Item.
+      slot: 13 # Slot in the inventory.
+      name: "&8» &7Information" # Display Name of Item.
+      lore: |- # Information text for the item.
+        &l
+        &aYou must be do click to toggle the modes.
+        &8&m----------------------------------
+        &7Also can use the command &e/hide &7or &e/vanish
+        &7if there an error with the items.
+    hider_off:
+      material: GRAY_DYE
+      name: "&6Hider &7(Click to active)"
+      lore: |-
+        &7Click to &aactivate&7 to the players.
+    hider_on:
+      material: ENDER_EYE
+      name: "&6Hider &7(Click to deactive)"
+      lore: |-
+        &7Click to &cdeactive&7 to the players.
+    vanish_off:
+      material: GRAY_DYE
+      name: "&6Vanish &7(Click to activate)"
+      lore: |-
+        &7Click to &caactivate&7 your invisibility.
+    vanish_on:
+      material: POTION
+      name: "&6Vanish &7(Click to deactivate)"
+      lore: |-
+        &7Click to &cdeactivate&7 your invisibility.
+messages:
+  not_console: "[PREFIX] &cThis command can't be executed in console." # No Console | Message.
+  not_permission: "[PREFIX] &cYou don't have permission." # No Permission | Message.
+  not_command: "[PREFIX] &cThis command is not been added to plugin." # No Command | Message.
+  list_cmds: |- # List CMDS | Message.
+    &l
+    &6         HiderPlayers &e1.0.1
+    &l
+    &a /hiderplayers [hp] &8- &fMain Command.
+    &a /hp list &8- &fShow the commands list.
+    &a /hp reload &8- &fReload the plugin.
+    &l
+    &a /tools &8- &fOpen the tools menu.
+    &l
+  reload: "[PREFIX] &7The plugin was reloaded in &a%ms%ms&7." # Plugin Reload | Message.
+  events: # Events Messages | Section.
+    vanish_enabled: "[PREFIX] &eVanish activated!" # Vanish Enabled | Message.
+    vanish_disabled: "[PREFIX] &cVanish deactivated!" # Vanish Disabled | Message.
+
+    vanish_warning: "&8[&c!&8] &cAny players yet can view you." # Vanish Important Warning | Message.
+
+    vanish_enabled_title: "&a&lVANISH ENABLED" # Vanish Enabled | Title.
+    vanish_enabled_subtitle: "&7Now the players can't view you." # Vanish Enabled | Subtitle.
+    vanish_disabled_title: "&c&lVANISH DISABLED" # Vanish Disabled | Title.
+    vanish_disabled_subtitle: "&7The players already can view you." # Vanish Disabled | Subtitle.
+
+    hider_enabled: "[PREFIX] &aPlayers deactivated!" # Hider Enabled | Message.
+    hider_disabled: "[PREFIX] &cPlayers activated!" # Hider Disabled | Message.
+
+    hider_enabled_title: "&a&lPLAYERS DISABLED" # Hider Enabled | Title
+    hider_enabled_subtitle: "&7The players was removed for you." # Hider Enabled | Subtitle
+    hider_disabled_title: "&c&lPLAYERS ENABLED" # Hider Disabled | Title
+    hider_disabled_subtitle: "&7The players are back." # Hider Enabled | Subtitle
+
+    opened_tools_menu: "[PREFIX] &eOpened Tools Menu." # Tools Menu Open | Message.
+
+    cooldown_time: "[PREFIX] &cYou must be wait &e%time% seconds &cto do this action." # Cooldown Time | Message.
